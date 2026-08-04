@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fazun Wang | Supply Chain Analytics &amp; Automation Portfolio</title>
+<style>
+  :root{
+    --ink:#142232;
+    --muted:#5e6b78;
+    --paper:#f4f7f8;
+    --card:#ffffff;
+    --line:#dce5e8;
+    --navy:#0d2b3e;
+    --teal:#0c7c7b;
+    --teal2:#19a09b;
+    --orange:#d87836;
+    --soft-teal:#e7f5f4;
+    --soft-orange:#fff0e4;
+    --soft-blue:#eaf1f6;
+    --shadow:0 18px 48px rgba(13,43,62,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .shell{max-width:1180px;margin:0 auto;padding:0 30px}
+  .hero{background:linear-gradient(135deg,#082333 0%,#0c3f50 58%,#0b706e 100%);color:white;padding:26px 0 62px;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-130px;top:-260px;box-shadow:0 0 0 72px rgba(255,255,255,.035),0 0 0 150px rgba(255,255,255,.025)}
+  nav{display:flex;justify-content:space-between;align-items:center;gap:25px;position:relative;z-index:2}
+  .brand{font-weight:800;letter-spacing:.03em}
+  .navlinks{display:flex;gap:24px;font-size:14px;color:rgba(255,255,255,.82)}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:52px;align-items:center;padding-top:74px;position:relative;z-index:2}
+  .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:750;color:#8ce1dc;margin-bottom:15px}
+  h1{font-size:54px;line-height:1.05;margin:0 0 14px;letter-spacing:-.04em}
+  .subtitle{font-size:24px;line-height:1.3;font-weight:650;margin:0 0 20px;color:#d9f0ef}
+  .hero-copy{font-size:17px;max-width:690px;color:rgba(255,255,255,.80);margin:0}
+  .badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+  .badge{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 12px;font-size:13px}
+  .hero-panel{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);border-radius:22px;padding:25px;backdrop-filter:blur(10px)}
+  .hero-panel h3{margin:0 0 18px;font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:#a7e9e5}
+  .mini-metric{display:grid;grid-template-columns:82px 1fr;gap:15px;padding:15px 0;border-top:1px solid rgba(255,255,255,.15)}
+  .mini-metric:first-of-type{border-top:none;padding-top:0}
+  .mini-metric strong{font-size:22px;line-height:1.1;color:white}
+  .mini-metric span{font-size:13px;color:rgba(255,255,255,.75)}
+  main{padding:46px 0 80px}
+  .metric-strip{margin-top:-74px;position:relative;z-index:3;display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+  .metric{padding:24px 25px;border-right:1px solid var(--line)}
+  .metric:last-child{border-right:none}
+  .metric b{font-size:27px;color:var(--navy);display:block;line-height:1.15;margin-bottom:5px}
+  .metric span{font-size:13px;color:var(--muted)}
+  section{padding:72px 0 0}
+  .section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:end;margin-bottom:30px}
+  .section-head h2{font-size:36px;line-height:1.15;letter-spacing:-.025em;margin:0}
+  .section-head p{margin:0;color:var(--muted);font-size:16px}
+  .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:25px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 32px rgba(22,49,64,.055)}
+  .about-card{padding:31px}
+  .about-card p{margin:0 0 15px;color:#344453}
+  .about-card p:last-child{margin-bottom:0}
+  .focus-card{padding:28px;background:var(--navy);color:white;border-color:transparent}
+  .focus-card h3{margin:0 0 17px;font-size:19px}
+  .focus-row{display:flex;gap:11px;padding:12px 0;border-top:1px solid rgba(255,255,255,.13)}
+  .focus-row:first-of-type{border-top:none}
+  .focus-num{width:27px;height:27px;flex:0 0 27px;border-radius:50%;background:var(--teal2);display:grid;place-items:center;font-size:12px;font-weight:800}
+  .focus-row b{display:block;font-size:14px;margin-bottom:2px}
+  .focus-row span{font-size:12.5px;color:rgba(255,255,255,.68)}
+  .projects{display:grid;gap:30px}
+  .project{overflow:hidden}
+  .project-top{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+  .project-copy{padding:34px 36px}
+  .project-tag{display:inline-block;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--soft-teal);color:var(--teal);margin-bottom:15px}
+  .project h3{font-size:27px;line-height:1.2;margin:0 0 12px;letter-spacing:-.015em}
+  .project-lead{font-size:15.5px;color:var(--muted);margin:0 0 23px}
+  .project-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:21px 0 25px}
+  .fact{background:#f7fafb;border:1px solid var(--line);border-radius:12px;padding:13px}
+  .fact b{display:block;font-size:19px;line-height:1.1;color:var(--navy)}
+  .fact span{font-size:11.5px;color:var(--muted)}
+  .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .project-grid h4{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal)}
+  .project-grid ul{list-style:none;padding:0;margin:0}
+  .project-grid li{position:relative;padding:4px 0 4px 16px;font-size:13.5px;color:#374858}
+  .project-grid li:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);position:absolute;left:0;top:12px}
+  .visual{background:linear-gradient(150deg,#e8f2f4,#f8fbfc);padding:27px;min-height:100%;display:flex;align-items:center;border-left:1px solid var(--line)}
+  .flow{width:100%}
+  .flow-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;font-weight:800;margin-bottom:12px}
+  .flow-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .node{background:white;border:1px solid #cad9de;border-radius:12px;padding:11px 13px;min-width:88px;text-align:center;box-shadow:0 5px 12px rgba(18,55,69,.06)}
+  .node b{font-size:12px;display:block;color:var(--navy)}
+  .node small{font-size:9.5px;color:var(--muted)}
+  .arrow{font-size:18px;color:var(--teal);font-weight:800}
+  .output-stack{display:grid;gap:7px}
+  .output-stack .node{border-left:4px solid var(--teal)}
+  .control-note{margin-top:19px;border-radius:12px;padding:13px 15px;background:white;border:1px solid #d7e4e7;font-size:12px;color:#526270}
+  .control-note b{color:var(--navy)}
+  .project-bottom{border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr}
+  .project-bottom > div{padding:20px 36px}
+  .project-bottom > div+div{border-left:1px solid var(--line)}
+  .project-bottom b{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);display:block;margin-bottom:5px}
+  .project-bottom span{font-size:13px;color:var(--muted)}
+  .bar-chart{width:100%}
+  .bar-item{display:grid;grid-template-columns:105px 1fr 40px;gap:10px;align-items:center;margin:9px 0}
+  .bar-label{font-size:11px;color:#405260;text-align:right}
+  .bar-track{height:14px;border-radius:9px;background:#dce8eb;overflow:hidden}
+  .bar-fill{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+  .bar-fill.warn{background:linear-gradient(90deg,#b8652d,var(--orange))}
+  .bar-value{font-size:11px;font-weight:750;color:var(--navy)}
+  .campaign-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;width:100%}
+  .dash-tile{background:white;border:1px solid #d3e0e4;border-radius:11px;padding:12px}
+  .dash-tile b{font-size:20px;color:var(--navy);display:block}
+  .dash-tile span{font-size:10.5px;color:var(--muted)}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .skill-card{padding:25px}
+  .skill-icon{width:42px;height:42px;border-radius:12px;background:var(--soft-teal);color:var(--teal);display:grid;place-items:center;font-weight:900;margin-bottom:16px}
+  .skill-card h3{font-size:17px;margin:0 0 9px}
+  .skill-card p{font-size:13px;color:var(--muted);margin:0}
+  .inventory{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+  .inventory-item{display:grid;grid-template-columns:44px 1fr auto;gap:13px;align-items:center;padding:18px 20px;background:white;border:1px solid var(--line);border-radius:14px}
+  .inventory-num{width:42px;height:42px;border-radius:12px;background:var(--soft-blue);display:grid;place-items:center;color:var(--navy);font-weight:850}
+  .inventory-item b{font-size:14px;display:block}
+  .inventory-item span{font-size:12px;color:var(--muted)}
+  .status{font-size:10px!important;text-transform:uppercase;letter-spacing:.08em;font-weight:850;color:var(--teal)!important;background:var(--soft-teal);padding:5px 8px;border-radius:999px}
+  .privacy{margin-top:35px;padding:25px 28px;background:var(--soft-orange);border:1px solid #f2cfb5;border-radius:16px;display:grid;grid-template-columns:42px 1fr;gap:15px}
+  .privacy .icon{width:42px;height:42px;border-radius:50%;background:white;display:grid;place-items:center;font-weight:900;color:var(--orange)}
+  .privacy h3{margin:0 0 4px;font-size:15px}
+  .privacy p{margin:0;font-size:12.5px;color:#6c5544}
+  .cta{margin-top:74px;background:var(--navy);color:white;border-radius:22px;padding:38px;display:grid;grid-template-columns:1.4fr .6fr;gap:25px;align-items:center}
+  .cta h2{margin:0 0 8px;font-size:28px}
+  .cta p{margin:0;color:rgba(255,255,255,.72);font-size:14px}
+  .contact{text-align:right}
+  .contact b{display:block;font-size:16px}
+  .contact span{font-size:12px;color:#99dcd8}
+  footer{padding:28px 0 45px;color:#7b8790;font-size:11px;text-align:center}
+  @media(max-width:900px){
+    .hero-grid,.section-head,.about-grid,.project-top,.cta{grid-template-columns:1fr}
+    .metric-strip{grid-template-columns:repeat(2,1fr)}
+    .metric:nth-child(2){border-right:none}
+    .metric:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .project-bottom,.skills-grid,.inventory{grid-template-columns:1fr}
+    .visual{border-left:none;border-top:1px solid var(--line)}
+    .contact{text-align:left}
+    h1{font-size:42px}
+  }
+  @media(max-width:620px){
+    .shell{padding:0 17px}.navlinks{display:none}.hero-grid{padding-top:50px}.metric-strip{grid-template-columns:1fr}.metric{border-right:none!important;border-bottom:1px solid var(--line)}
+    .project-facts,.project-grid{grid-template-columns:1fr}.project-copy{padding:28px 24px}.project-bottom{grid-template-columns:1fr}.project-bottom>div+div{border-left:none;border-top:1px solid var(--line)}
+  }
+  @media print{
+    @page{size:Letter;margin:12mm}
+    body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .shell{max-width:none;padding:0}
+    .hero{padding:18px 0 38px;border-radius:0}
+    .hero-grid{padding-top:35px;grid-template-columns:1.2fr .8fr;gap:25px}
+    h1{font-size:38px}.subtitle{font-size:19px}.hero-copy{font-size:13px}.navlinks{display:none}
+    .metric-strip{margin-top:-37px;box-shadow:none;border:1px solid var(--line)}
+    main{padding-top:20px}.metric{padding:15px}.metric b{font-size:20px}
+    section{padding-top:34px}.section-head{margin-bottom:18px}.section-head h2{font-size:27px}.section-head p{font-size:12.5px}
+    .about-card,.focus-card{padding:20px}.projects{gap:18px}.project{break-inside:avoid;box-shadow:none}
+    .project-copy{padding:24px}.visual{padding:19px}.project h3{font-size:21px}.project-lead{font-size:12px}.project-facts{margin:14px 0 16px}.fact{padding:9px}.fact b{font-size:15px}.project-grid li{font-size:10.5px}.project-bottom{display:none}.project:first-of-type .control-note{display:none}#skills{break-before:page}#skills + section{break-before:page}
+    .skills-grid{grid-template-columns:repeat(2,1fr)!important;gap:9px}.skill-card{padding:14px}.skill-card p{font-size:10px}
+    .inventory{grid-template-columns:repeat(2,1fr)!important;gap:6px}.inventory-item{padding:7px 10px;grid-template-columns:31px 1fr auto}.inventory-num{width:29px;height:29px;border-radius:8px}.inventory-item b{font-size:11px}.inventory-item span{font-size:9px}.status{font-size:8px!important;padding:3px 6px}
+    .privacy{margin-top:10px;padding:10px 13px;grid-template-columns:30px 1fr;gap:9px}.privacy .icon{width:29px;height:29px}.privacy h3{font-size:12px}.privacy p{font-size:9px}
+    .cta{margin-top:14px;padding:16px 20px}.cta h2{font-size:20px}.cta p{font-size:10px}
+    a[href]:after{content:""}
+    footer{display:none}
+  }
+
+  .contact-links{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:13px}
+  .contact-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:750;color:white;background:rgba(255,255,255,.08)}
+  .contact-link:hover{background:rgba(255,255,255,.16)}
+  .tracker-chart{width:100%}
+  .tracker-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:18px}
+  .tracker-kpi{background:white;border:1px solid #d3e0e4;border-radius:11px;padding:12px}
+  .tracker-kpi b{font-size:20px;color:var(--navy);display:block}
+  .tracker-kpi span{font-size:10.5px;color:var(--muted)}
+  .trend-row{display:grid;grid-template-columns:54px 1fr 48px;gap:9px;align-items:center;margin:7px 0}
+  .trend-month{font-size:10px;color:#405260;text-align:right}
+  .trend-track{height:12px;border-radius:8px;background:#dce8eb;overflow:hidden}
+  .trend-bar{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+  .trend-value{font-size:10px;font-weight:750;color:var(--navy)}
+  .small-note{font-size:10px;color:var(--muted);margin-top:10px}
+  @media(max-width:900px){.contact-links{justify-content:flex-start}}
+</style><meta content="Portfolio of supply chain analytics, merchandising reporting, Excel/VBA automation, product data governance, and process improvement projects by Fazun Wang." name="description"/><meta content="Fazun Wang | Supply Chain Analytics &amp; Automation Portfolio" property="og:title"/><meta content="Business-first analytics and automation projects across invoicing, merchandising reporting, catalogue governance, pricing, and promotions." property="og:description"/><meta content="website" property="og:type"/><meta content="#0d2b3e" name="theme-color"/>
+</head>
+<body>
+<header class="hero">
+<div class="shell">
+<nav>
+<div class="brand">FAZUN WANG</div>
+<div class="navlinks"><a href="#about">Profile</a><a href="#projects">Projects</a><a href="#skills">Capabilities</a><a href="#contact">Contact</a></div>
+</nav>
+<div class="hero-grid">
+<div>
+<div class="eyebrow">Supply Chain · Merchandising · Automation</div>
+<h1>Operational problems, converted into controlled workflows.</h1>
+<p class="subtitle">Supply chain analytics &amp; automation portfolio</p>
+<p class="hero-copy">I build practical systems that reconcile fragmented data, enforce business rules, surface exceptions, and turn recurring merchandising and supply chain activity into controlled workflows and decision-ready reporting.</p>
+<div class="badges"><span class="badge">Excel / VBA</span><span class="badge">Data Reconciliation</span><span class="badge">Process Improvement</span><span class="badge">Supply Chain Operations</span><span class="badge">EN · FR · 中文</span></div>
+</div>
+<aside class="hero-panel">
+<h3>Portfolio Positioning</h3>
+<div class="mini-metric"><strong>Analyst</strong><span>Business-first automation, not isolated scripting.</span></div>
+<div class="mini-metric"><strong>Controls</strong><span>Validation, duplicate handling, audit fields, and exception queues.</span></div>
+<div class="mini-metric"><strong>Outputs</strong><span>Standardized files designed for operational use by multiple stakeholders.</span></div>
+</aside>
+</div>
+</div>
+</header>
+<main>
+<div class="shell">
+<div class="metric-strip"><div class="metric"><b>4-5 hrs → ~15 min</b><span>Representative invoice-splitting workflow</span></div><div class="metric"><b>$900K+ activity</b><span>Anonymized merchandising purchase tracker scale</span></div><div class="metric"><b>5,537 rows</b><span>Internal and vendor product records in a sample audit</span></div><div class="metric"><b>EN + FR</b><span>Parameter-driven promotional outputs</span></div></div>
+<section id="about">
+<div class="section-head">
+<h2>Professional profile</h2>
+<p>Three-plus years in data coordination and operational reporting, with hands-on experience spanning product master data, vendor communication, pricing, promotions, import documentation, invoice allocation, and cross-functional process improvement.</p>
+</div>
+<div class="about-grid">
+<div class="card about-card">
+<p>My strongest work sits between operations and analytics. I understand the business documents, stakeholders, exceptions, and downstream risks - then translate that knowledge into repeatable Excel/VBA tools.</p>
+<p>The portfolio is intentionally framed around business outcomes: reliable matching rules, transparent exception handling, controlled output generation, and measurable reductions in repetitive work.</p>
+</div>
+<div class="card focus-card">
+<h3>How I build</h3>
+<div class="focus-row"><div class="focus-num">1</div><div><b>Map the real workflow</b><span>Inputs, ownership, failure points, and required outputs.</span></div></div>
+<div class="focus-row"><div class="focus-num">2</div><div><b>Define business rules</b><span>Keys, duplicate logic, overwrite rules, and exceptions.</span></div></div>
+<div class="focus-row"><div class="focus-num">3</div><div><b>Automate with controls</b><span>Usable menus, validation logs, safe resets, and auditability.</span></div></div>
+<div class="focus-row"><div class="focus-num">4</div><div><b>Measure the result</b><span>Time saved, rows processed, issues identified, and risk reduced.</span></div></div>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="section-head">
+<h2>Featured projects</h2>
+<p>Four selected case studies reconstructed from working files. Public examples are anonymized; proprietary company, member, supplier, and product-level pricing information has been removed.</p>
+</div>
+<div class="projects">
+<article class="card project">
+<div class="project-top">
+<div class="project-copy">
+<span class="project-tag">Flagship case study · Supply chain</span>
+<h3>Member Invoice Splitting &amp; Validation System</h3>
+<p class="project-lead">Built a controlled workflow to clean shipment documents, reconcile commercial and logistics records, merge customs charges, enrich member information, and generate standardized member-level invoice and bill-of-lading outputs.</p>
+<div class="project-facts">
+<div class="fact"><b>3</b><span>Source datasets</span></div>
+<div class="fact"><b>2 per member</b><span>Invoice + BOL tabs</span></div>
+<div class="fact"><b>~94%</b><span>Process-time reduction</span></div>
+</div>
+<div class="project-grid">
+<div>
+<h4>Business problem</h4>
+<ul><li>Repeated manual copying across shipment documents</li><li>Duplicate and ambiguous product lines</li><li>Inconsistent member allocation and formatting</li><li>High risk of missing customs or logistics fields</li></ul>
+</div>
+<div>
+<h4>Controls designed</h4>
+<ul><li>PDF-paste cleanup and fuzzy header detection</li><li>Composite keys using item, SKU, vendor, PO, quantity, and price</li><li>Strict duplicate-aware customs matching</li><li>Audit columns for match status and match key</li></ul>
+</div>
+</div>
+</div>
+<div class="visual">
+<div class="flow">
+<div class="flow-label">Process architecture</div>
+<div class="flow-row">
+<div class="node"><b>Commercial Invoice</b><small>Items · PO · price</small></div>
+<div class="node"><b>Packing List</b><small>Qty · weight · volume</small></div>
+<div class="node"><b>Customs Data</b><small>Duty · GST · SIMA</small></div>
+</div>
+<div class="flow-row" style="margin:13px 0"><span class="arrow">↓</span></div>
+<div class="flow-row">
+<div class="node" style="min-width:180px;border-top:4px solid var(--orange)"><b>Normalize + Reconcile</b><small>Duplicate-safe matching and exception checks</small></div>
+<span class="arrow">→</span>
+<div class="node" style="min-width:135px;border-top:4px solid var(--teal)"><b>Master Dataset</b><small>Unified audit-ready rows</small></div>
+</div>
+<div class="flow-row" style="margin:13px 0"><span class="arrow">↓</span></div>
+<div class="flow-row">
+<div class="output-stack">
+<div class="node"><b>Member Invoice</b><small>Values-only output</small></div>
+<div class="node"><b>Bill of Lading</b><small>Member-specific shipment detail</small></div>
+<div class="node"><b>Summary</b><small>One line per member</small></div>
+</div>
+</div>
+<div class="control-note"><b>Design choice:</b> duplicated lines are preserved and consumed one-to-one rather than summed or deleted, protecting traceability.</div>
+</div>
+</div>
+</div>
+<div class="project-bottom"><div><b>Tools</b><span>Excel, VBA, dictionaries, composite-key matching, reconciliation, template generation</span></div><div><b>Business value</b><span>Reduced a recurring 4-5 hour process to approximately 15 minutes while improving consistency and auditability.</span></div></div>
+</article><article class="card project">
+<div class="project-top">
+<div class="project-copy">
+<span class="project-tag">Flagship case study · Merchandising analytics</span>
+<h3>Merchandising Purchase Tracker &amp; KPI Dashboard</h3>
+<p class="project-lead">Designed a department-level purchase tracker that standardizes Bedding and Furniture inputs, applies source-specific calculation rules, separates service fees from reportable purchases, validates row completeness, and updates management summaries automatically.</p>
+<div class="project-facts">
+<div class="fact"><b>$900K+</b><span>Representative purchase activity</span></div>
+<div class="fact"><b>340</b><span>Tracked purchase records</span></div>
+<div class="fact"><b>643</b><span>Units in the reporting view</span></div>
+</div>
+<div class="project-grid">
+<div>
+<h4>Business rules</h4>
+<ul><li>Group Buy value calculated from quantity × unit price</li><li>Container Buy accepts direct product value</li><li>Service fees remain visible for audit but are excluded from reportable totals</li><li>Validation flags missing fields and conflicting value inputs</li></ul>
+</div>
+<div>
+<h4>Management outputs</h4>
+<ul><li>Bedding and Furniture department summaries</li><li>Group Buy versus Container Buy segmentation</li><li>Monthly purchase trend and service-fee visibility</li><li>Record, unit, and distinct-member indicators</li></ul>
+</div>
+</div>
+</div>
+<div class="visual">
+<div class="tracker-chart">
+<div class="flow-label">Representative anonymized dashboard</div>
+<div class="tracker-kpis">
+<div class="tracker-kpi"><b>$900K+</b><span>Reportable purchases</span></div>
+<div class="tracker-kpi"><b>2</b><span>Departments</span></div>
+<div class="tracker-kpi"><b>340</b><span>Records</span></div>
+<div class="tracker-kpi"><b>8</b><span>Reported months</span></div>
+</div>
+<div class="flow-label">Monthly reportable purchase trend</div>
+<div class="trend-row"><span class="trend-month">Nov</span><div class="trend-track"><div class="trend-bar" style="width:51%"></div></div><span class="trend-value">$144K</span></div>
+<div class="trend-row"><span class="trend-month">Dec</span><div class="trend-track"><div class="trend-bar" style="width:39%"></div></div><span class="trend-value">$109K</span></div>
+<div class="trend-row"><span class="trend-month">Jan</span><div class="trend-track"><div class="trend-bar" style="width:27%"></div></div><span class="trend-value">$77K</span></div>
+<div class="trend-row"><span class="trend-month">Mar</span><div class="trend-track"><div class="trend-bar" style="width:40%"></div></div><span class="trend-value">$113K</span></div>
+<div class="trend-row"><span class="trend-month">Jun</span><div class="trend-track"><div class="trend-bar" style="width:100%"></div></div><span class="trend-value">$281K</span></div>
+<div class="control-note"><b>Design choice:</b> calculated and audit-only fields are visually separated so users can enter data without overwriting reporting logic.</div>
+<div class="small-note">Rounded aggregate values are shown only to demonstrate scale; company and counterparty details are excluded.</div>
+</div>
+</div>
+</div>
+<div class="project-bottom"><div><b>Tools</b><span>Excel formulas, validation controls, KPI design, monthly trend reporting, process documentation</span></div><div><b>Business value</b><span>Created a reusable source of truth for purchase reporting while preventing fee duplication and inconsistent department calculations.</span></div></div>
+</article>
+<article class="card project">
+<div class="project-top">
+<div class="project-copy">
+<span class="project-tag">Master data · Exception reporting</span>
+<h3>Product Catalogue Reconciliation &amp; SKU Status Audit</h3>
+<p class="project-lead">Created an exception-based comparison tool that reconciles internal catalogue records against a vendor list using normalized model keys, separates status decisions from price checks, and routes results into action-specific review queues.</p>
+<div class="project-facts">
+<div class="fact"><b>3,600</b><span>Internal catalogue rows</span></div>
+<div class="fact"><b>1,937</b><span>Vendor records</span></div>
+<div class="fact"><b>1,260</b><span>Actionable review items</span></div>
+</div>
+<div class="project-grid">
+<div>
+<h4>Automation logic</h4>
+<ul><li>Auto-detects headers within the first five rows</li><li>Normalizes model numbers into clean comparison keys</li><li>Flags duplicate vendor keys instead of forcing matches</li><li>Separates product-status actions from price exceptions</li></ul>
+</div>
+<div>
+<h4>Output queues</h4>
+<ul><li>Enable or disable internal products</li><li>Remove products no longer found at vendor</li><li>Confirm uncertain status with vendor</li><li>Review vendor-only records for product creation</li></ul>
+</div>
+</div>
+</div>
+<div class="visual">
+<div class="bar-chart">
+<div class="flow-label">Sample classification output</div>
+<div class="bar-item"><span class="bar-label">No action</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">1,825</span></div>
+<div class="bar-item"><span class="bar-label">Remove</span><div class="bar-track"><div class="bar-fill warn" style="width:56.3%"></div></div><span class="bar-value">1,027</span></div>
+<div class="bar-item"><span class="bar-label">Confirm vendor</span><div class="bar-track"><div class="bar-fill warn" style="width:6.6%"></div></div><span class="bar-value">121</span></div>
+<div class="bar-item"><span class="bar-label">New product</span><div class="bar-track"><div class="bar-fill" style="width:5.3%"></div></div><span class="bar-value">96</span></div>
+<div class="bar-item"><span class="bar-label">Enable</span><div class="bar-track"><div class="bar-fill" style="width:1.2%"></div></div><span class="bar-value">16</span></div>
+<div class="control-note"><b>Result:</b> users review exceptions by required action instead of manually scanning thousands of rows.</div>
+</div>
+</div>
+</div>
+<div class="project-bottom"><div><b>Tools</b><span>Excel, VBA, normalized keys, status rules, price comparison, output segmentation</span></div><div><b>Business value</b><span>Converted a broad catalogue comparison into a prioritized, traceable work queue for merchandising and e-commerce teams.</span></div></div>
+</article>
+<article class="card project">
+<div class="project-top">
+<div class="project-copy">
+<span class="project-tag">Pricing · Bilingual output generation</span>
+<h3>Promotion, P&amp;P &amp; Price-Tag Automation</h3>
+<p class="project-lead">Designed a parameter-driven promotion system that transforms a monthly source grid and event inputs into standardized English and French P&amp;P files, brand-specific product grids, price tags, and marketing-ready datasets.</p>
+<div class="project-facts">
+<div class="fact"><b>426</b><span>Rows in representative source grid</span></div>
+<div class="fact"><b>EN + FR</b><span>Bilingual templates</span></div>
+<div class="fact"><b>1 control panel</b><span>Multiple output modes</span></div>
+</div>
+<div class="project-grid">
+<div>
+<h4>Configurable inputs</h4>
+<ul><li>Event names and coverage dates</li><li>Vendor and output-type selection</li><li>Financing term and set-price add-ons</li><li>Overwrite, language, and generation modes</li></ul>
+</div>
+<div>
+<h4>Generated outputs</h4>
+<ul><li>General and vendor-split P&amp;P workbooks</li><li>English and French monthly price tags</li><li>Brand-specific e-commerce grids</li><li>Marketing PDF source dataset</li></ul>
+</div>
+</div>
+</div>
+<div class="visual">
+<div class="flow">
+<div class="flow-label">One control panel, multiple deliverables</div>
+<div class="flow-row">
+<div class="node"><b>Source Grid</b><small>Cost · retail · model</small></div><span class="arrow">+</span><div class="node"><b>Campaign Inputs</b><small>Date · event · promo</small></div>
+</div>
+<div class="flow-row" style="margin:14px 0"><span class="arrow">↓</span></div>
+<div class="node" style="margin:0 auto;max-width:220px;border-top:4px solid var(--orange)"><b>Validation + Price Logic</b><small>Brand mapping · formula retention · row management</small></div>
+<div class="flow-row" style="margin:14px 0"><span class="arrow">↓</span></div>
+<div class="flow-row">
+<div class="output-stack">
+<div class="node"><b>P&amp;P EN / FR</b><small>General and vendor split</small></div>
+<div class="node"><b>Price Tags</b><small>Monthly campaign files</small></div>
+</div>
+<div class="output-stack">
+<div class="node"><b>AVB Grids</b><small>Brand-specific data</small></div>
+<div class="node"><b>Marketing Data</b><small>Prices, savings, images</small></div>
+</div>
+</div>
+<div class="control-note"><b>Design choice:</b> business users can change campaign parameters without editing the VBA code.</div>
+</div>
+</div>
+</div>
+<div class="project-bottom"><div><b>Tools</b><span>Excel, VBA, template automation, bilingual content, pricing rules, configurable controls</span></div><div><b>Business value</b><span>Replaced repetitive brand-by-brand file preparation with a consistent, reusable monthly workflow.</span></div></div>
+</article>
+
+</div>
+</section>
+<section id="skills">
+<div class="section-head"><h2>Core capabilities</h2><p>The technical work is anchored in operational understanding. These are the capabilities demonstrated by the projects above, not a generic list of software keywords.</p></div>
+<div class="skills-grid">
+<div class="card skill-card"><div class="skill-icon">01</div><h3>Data reconciliation</h3><p>Composite keys, normalized identifiers, duplicate-safe matching, source prioritization, and audit columns.</p></div>
+<div class="card skill-card"><div class="skill-icon">02</div><h3>Workflow automation</h3><p>Control panels, one-click processes, configurable parameters, safe resets, logs, and standardized exports.</p></div>
+<div class="card skill-card"><div class="skill-icon">03</div><h3>Exception management</h3><p>Action-based queues that isolate missing, ambiguous, inactive, duplicate, and unmatched records.</p></div>
+<div class="card skill-card"><div class="skill-icon">04</div><h3>Supply chain operations</h3><p>Commercial invoices, packing lists, bills of lading, customs charges, shipment allocation, and member billing.</p></div>
+<div class="card skill-card"><div class="skill-icon">05</div><h3>Product &amp; pricing data</h3><p>Catalogue status, vendor records, price grids, promotions, margins, bilingual templates, and e-commerce outputs.</p></div>
+<div class="card skill-card"><div class="skill-icon">06</div><h3>KPI reporting &amp; documentation</h3><p>Department summaries, monthly trends, control guides, calculation definitions, and outputs designed for business users and reviewers.</p></div>
+</div>
+</section>
+<section>
+<div class="section-head"><h2>Selected automation inventory</h2><p>The public portfolio highlights four analyst-level cases. Supporting utilities demonstrate breadth without diluting the strongest business-impact stories.</p></div>
+<div class="inventory"><div class="inventory-item"><div class="inventory-num">A</div><div><b>Invoice &amp; BOL Exporter</b><span>Member-level outputs and reconciliation summary</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">B</div><div><b>Merchandising Purchase Tracker</b><span>Department KPIs, validation, and monthly trends</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">C</div><div><b>SKU Comparison Tool</b><span>Catalogue reconciliation and action queues</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">D</div><div><b>Promotion Master Generator</b><span>Bilingual P&amp;P, price tags, and brand grids</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">E</div><div><b>Campaign Mail Merge</b><span>Outlook drafts, follow-ups, and status dashboard</span></div><span class="status">Supporting</span></div><div class="inventory-item"><div class="inventory-num">F</div><div><b>File Consolidation Utility</b><span>Combines workbooks in date order with safe sheet naming</span></div><span class="status">Supporting</span></div><div class="inventory-item"><div class="inventory-num">G</div><div><b>Furniture Price Grid Generator</b><span>Event inputs, zone pricing, and EN/FR templates</span></div><span class="status">Supporting</span></div></div>
+<div class="privacy"><div class="icon">✓</div><div><h3>Confidentiality statement</h3><p>All examples are reconstructed and anonymized. Company paths, member identities, vendor identities, addresses, product-level pricing, and proprietary source data are excluded. The public repository contains the portfolio site only - not internal workbooks, raw data, or proprietary VBA modules.</p></div></div>
+</section>
+<div class="cta" id="contact">
+<div><h2>Target roles</h2><p>Supply Chain Analyst · Merchandising Analyst · Business Analyst - Operations · Product / Master Data Analyst</p></div>
+<div class="contact"><b>Fazun Wang</b><span>Montreal, Quebec · English / French / Mandarin</span><div class="contact-links"><a class="contact-link" href="mailto:jimwang98cn@gmail.com">Email</a><a class="contact-link" href="https://www.linkedin.com/in/Fazun-wang/" rel="noopener" target="_blank">LinkedIn</a></div></div>
+</div>
+</div>
+</main>
+<footer>Public portfolio v2 · Anonymized case studies · August 2026</footer>
+</body>
+</html>
