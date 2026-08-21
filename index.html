@@ -232,7 +232,7 @@
 <section id="projects">
 <div class="section-head">
 <h2>Featured projects</h2>
-<p>Four selected case studies reconstructed from working files. Public examples are anonymized; proprietary company, member, supplier, and product-level pricing information has been removed.</p>
+<p>Five selected case studies reconstructed from working files. Public examples are anonymized; proprietary company, member, supplier, and product-level pricing information has been removed.</p>
 </div>
 <div class="projects">
 <article class="card project">
@@ -331,6 +331,53 @@
 <article class="card project">
 <div class="project-top">
 <div class="project-copy">
+<span class="project-tag">Flagship case study · Pricing analytics</span>
+<h3>Market-Based Bedding Pricing Strategy</h3>
+<p class="project-lead">Built an evidence-controlled competitor benchmarking model that validates comparable Queen-size products, separates strong matches from weak assumptions, and converts qualified market evidence into defensible regular-price direction.</p>
+<div class="project-facts">
+<div class="fact"><b>27</b><span>Product positions reviewed</span></div>
+<div class="fact"><b>8</b><span>Retailers in the universe</span></div>
+<div class="fact"><b>21</b><span>Validated Queen evidence rows</span></div>
+</div>
+<div class="project-grid">
+<div>
+<h4>Business problem</h4>
+<ul><li>Similar names can hide different sizes, builds, and market tiers</li><li>Regional, promotional, and unavailable prices distort comparisons</li><li>Broken or stale pages can contaminate averages</li><li>Leadership needs recommendations with visible uncertainty</li></ul>
+</div>
+<div>
+<h4>Decision rules</h4>
+<ul><li>Compare within the same brand and Queen size only</li><li>Prioritize construction, coil count, thickness, and tier</li><li>Exclude unresolved evidence from the pricing math but retain it in a gap log</li><li>Assign High, Medium, Low, or Gap confidence instead of forcing a match</li></ul>
+</div>
+</div>
+</div>
+<div class="visual">
+<div class="flow">
+<div class="flow-label">Evidence gate: only defensible rows influence price direction</div>
+<div class="flow-row">
+<div class="node"><b>Retailer Universe</b><small>8 requested sources</small></div>
+<span class="arrow">→</span>
+<div class="node"><b>Queen Check</b><small>Clicked live page</small></div>
+</div>
+<div class="flow-row" style="margin:13px 0"><span class="arrow">↓</span></div>
+<div class="flow-row">
+<div class="node" style="min-width:170px;border-top:4px solid var(--orange)"><b>Comparable Product Test</b><small>Brand · build · coil · thickness · tier</small></div>
+<span class="arrow">→</span>
+<div class="node" style="min-width:135px;border-top:4px solid var(--teal)"><b>Qualified Evidence</b><small>21 rows · 4 retailers</small></div>
+</div>
+<div class="flow-row" style="margin:13px 0"><span class="arrow">↓</span></div>
+<div class="output-stack">
+<div class="node"><b>Price Direction</b><small>Market anchor and recommended regular</small></div>
+<div class="node"><b>Confidence + Gap Log</b><small>Facts separated from assumptions</small></div>
+</div>
+<div class="control-note"><b>Design choice:</b> a visible gap is safer than a false comparison. Unavailable, broken, range-priced, or unresolved pages remain auditable but do not drive recommendations.</div>
+</div>
+</div>
+</div>
+<div class="project-bottom"><div><b>Tools</b><span>Excel, competitor research, structured matching, link verification, confidence scoring, executive reporting</span></div><div><b>Business value</b><span>Replaced impression-based price comparisons with an auditable decision model that shows both the recommendation and the strength of evidence behind it.</span></div></div>
+</article>
+<article class="card project">
+<div class="project-top">
+<div class="project-copy">
 <span class="project-tag">Master data · Exception reporting</span>
 <h3>Product Catalogue Reconciliation &amp; SKU Status Audit</h3>
 <p class="project-lead">Created an exception-based comparison tool that reconciles internal catalogue records against a vendor list using normalized model keys, separates status decisions from price checks, and routes results into action-specific review queues.</p>
@@ -421,13 +468,13 @@
 <div class="card skill-card"><div class="skill-icon">02</div><h3>Workflow automation</h3><p>Control panels, one-click processes, configurable parameters, safe resets, logs, and standardized exports.</p></div>
 <div class="card skill-card"><div class="skill-icon">03</div><h3>Exception management</h3><p>Action-based queues that isolate missing, ambiguous, inactive, duplicate, and unmatched records.</p></div>
 <div class="card skill-card"><div class="skill-icon">04</div><h3>Supply chain operations</h3><p>Commercial invoices, packing lists, bills of lading, customs charges, shipment allocation, and member billing.</p></div>
-<div class="card skill-card"><div class="skill-icon">05</div><h3>Product &amp; pricing data</h3><p>Catalogue status, vendor records, price grids, promotions, margins, bilingual templates, and e-commerce outputs.</p></div>
+<div class="card skill-card"><div class="skill-icon">05</div><h3>Product &amp; pricing data</h3><p>Catalogue status, competitor benchmarking, confidence scoring, price grids, promotions, margins, bilingual templates, and e-commerce outputs.</p></div>
 <div class="card skill-card"><div class="skill-icon">06</div><h3>KPI reporting &amp; documentation</h3><p>Department summaries, monthly trends, control guides, calculation definitions, and outputs designed for business users and reviewers.</p></div>
 </div>
 </section>
 <section>
-<div class="section-head"><h2>Selected automation inventory</h2><p>The public portfolio highlights four analyst-level cases. Supporting utilities demonstrate breadth without diluting the strongest business-impact stories.</p></div>
-<div class="inventory"><div class="inventory-item"><div class="inventory-num">A</div><div><b>Invoice &amp; BOL Exporter</b><span>Member-level outputs and reconciliation summary</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">B</div><div><b>Merchandising Purchase Tracker</b><span>Department KPIs, validation, and monthly trends</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">C</div><div><b>SKU Comparison Tool</b><span>Catalogue reconciliation and action queues</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">D</div><div><b>Promotion Master Generator</b><span>Bilingual P&amp;P, price tags, and brand grids</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">E</div><div><b>Campaign Mail Merge</b><span>Outlook drafts, follow-ups, and status dashboard</span></div><span class="status">Supporting</span></div><div class="inventory-item"><div class="inventory-num">F</div><div><b>File Consolidation Utility</b><span>Combines workbooks in date order with safe sheet naming</span></div><span class="status">Supporting</span></div><div class="inventory-item"><div class="inventory-num">G</div><div><b>Furniture Price Grid Generator</b><span>Event inputs, zone pricing, and EN/FR templates</span></div><span class="status">Supporting</span></div></div>
+<div class="section-head"><h2>Selected automation inventory</h2><p>The public portfolio highlights five analyst-level cases. Supporting utilities demonstrate breadth without diluting the strongest business-impact stories.</p></div>
+<div class="inventory"><div class="inventory-item"><div class="inventory-num">A</div><div><b>Invoice &amp; BOL Exporter</b><span>Member-level outputs and reconciliation summary</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">B</div><div><b>Merchandising Purchase Tracker</b><span>Department KPIs, validation, and monthly trends</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">C</div><div><b>Bedding Pricing Strategy</b><span>Queen-only evidence gates, market anchors, and confidence tiers</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">D</div><div><b>SKU Comparison Tool</b><span>Catalogue reconciliation and action queues</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">E</div><div><b>Promotion Master Generator</b><span>Bilingual P&amp;P, price tags, and brand grids</span></div><span class="status">Featured</span></div><div class="inventory-item"><div class="inventory-num">F</div><div><b>Campaign Mail Merge</b><span>Outlook drafts, follow-ups, and status dashboard</span></div><span class="status">Supporting</span></div><div class="inventory-item"><div class="inventory-num">G</div><div><b>File Consolidation Utility</b><span>Combines workbooks in date order with safe sheet naming</span></div><span class="status">Supporting</span></div><div class="inventory-item"><div class="inventory-num">H</div><div><b>Furniture Price Grid Generator</b><span>Event inputs, zone pricing, and EN/FR templates</span></div><span class="status">Supporting</span></div></div>
 <div class="privacy"><div class="icon">✓</div><div><h3>Confidentiality statement</h3><p>All examples are reconstructed and anonymized. Company paths, member identities, vendor identities, addresses, product-level pricing, and proprietary source data are excluded. The public repository contains the portfolio site only - not internal workbooks, raw data, or proprietary VBA modules.</p></div></div>
 </section>
 <div class="cta" id="contact">
@@ -436,6 +483,6 @@
 </div>
 </div>
 </main>
-<footer>Public portfolio v2 · Anonymized case studies · August 2026</footer>
+<footer>Public portfolio v3 · Anonymized case studies · August 2026</footer>
 </body>
 </html>
